@@ -1,4 +1,6 @@
-﻿//Apresentação do Programa
+﻿using Menu_Interativo.Models;
+
+//Apresentação do Programa
 Console.WriteLine("---------------------------");
 Console.WriteLine("    Calculadora 2000");
 Console.WriteLine("---------------------------");
@@ -12,12 +14,14 @@ string? inicia = Console.ReadLine();
 
 while (inicia == "s") 
 {
-    Console.WriteLine("Escolha uma opção:\n[1] Soma\n[2] Subtração\n[3] Divisão\n[4] Multplicação");
-    string? opcao = Console.ReadLine();
+    Console.WriteLine("Escolha uma opção:\n[1] Soma\n[2] Subtração\n[3] Divisão\n[4] Multplicação\n[5] Sair");
+    int opcao = int.Parse(Console.ReadLine());
     if (opcao == 1)
     {
-
+        Calculadora Soma = new Calculadora();
+        Console.WriteLine("Digite um numero: ");
+        Soma.numero1 = 
+        Console.WriteLine("Digite outro numero: ");
     }
-}
 
 Console.WriteLine("Progama encerrado.");
