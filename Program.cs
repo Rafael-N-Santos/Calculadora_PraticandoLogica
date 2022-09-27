@@ -1,27 +1,57 @@
 ﻿using Menu_Interativo.Models;
 
+
 //Apresentação do Programa
 Console.WriteLine("---------------------------");
 Console.WriteLine("    Calculadora 2000");
 Console.WriteLine("---------------------------");
 
 Console.WriteLine("Olá seja bem vindo a Calculadora 2000, qual seu nome?: ");
-string? nome = Console.ReadLine();
+string nome = Console.ReadLine();
 Console.WriteLine($"{nome}, vamos começar, deseja iniciar a calculadora? [s/n]");
-string? inicia = Console.ReadLine();
+string inicia = Console.ReadLine().ToUpper();
 
-//Inicio do Funcionamento do Programa
+Calculadora Calcula = new Calculadora();
 
-while (inicia == "s") 
+string opcao = string.Empty;
+
+while (inicia == "S")
 {
-    Console.WriteLine("Escolha uma opção:\n[1] Soma\n[2] Subtração\n[3] Divisão\n[4] Multplicação\n[5] Sair");
-    int opcao = int.Parse(Console.ReadLine());
-    if (opcao == 1)
+    Console.Clear();
+    Console.WriteLine("Digite a sua opção:");
+    Console.WriteLine("[1] SOMA");
+    Console.WriteLine("[2] SUBTRAÇÃO");
+    Console.WriteLine("[3] DIVISÃO");
+    Console.WriteLine("[4] MULTIPLICAÇÃO");
+    Console.WriteLine("[5] ENCERRAR");
+
+    switch (Console.ReadLine())
     {
-        Calculadora Soma = new Calculadora();
-        Console.WriteLine("Digite um numero: ");
-        Soma.numero1 = 
-        Console.WriteLine("Digite outro numero: ");
+        case "1":
+            Calcula.ApresentarSoma();
+            break;
+        
+        case "2":
+            Calcula.ApresentarSubtracao();
+            break;
+
+        case "3":
+            Calcula.ApresentarDivisao();
+            break;
+        
+        case "4":
+            Calcula.ApresentarMultiplicacao();
+            break;
+
+        case "5":
+            inicia = "n";
+            break;
     }
 
-Console.WriteLine("Progama encerrado.");
+    Console.WriteLine("Aperte uma tecla para continuar");
+    Console.ReadLine();
+}
+
+Console.WriteLine("O programa se encerrou");
+
+
